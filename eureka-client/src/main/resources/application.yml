@@ -9,3 +9,11 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: service-hi
+    prefer-ip-address: true
+info:
+  app.name: eureka-client
+  company.name: www.zhaowb.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
