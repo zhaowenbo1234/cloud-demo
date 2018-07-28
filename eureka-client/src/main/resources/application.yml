@@ -15,5 +15,5 @@ eureka:
 info:
   app.name: eureka-client
   company.name: www.zhaowb.com
-  build.artifactId: $project.artifactId$
-  build.version: $project.version$
+  build.artifactId: eureka-client
+  build.version: 0.0.1-SNAPSHOT
