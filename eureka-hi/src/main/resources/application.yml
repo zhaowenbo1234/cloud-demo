@@ -21,7 +21,6 @@ spring:
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
 
-
 eureka:
   client:
     serviceUrl:
@@ -32,5 +31,5 @@ eureka:
 info:
   app.name: eureka-hi
   company.name: www.zhaowb.com
-  build.artifactId: $project.artifactId$
+  build.artifactId: $project.artifactId$    # 这样写在idea 中运行出来不显示版本号，直接显示 $project.artifactId$ 字符串，可以自己修改
   build.version: $project.version$

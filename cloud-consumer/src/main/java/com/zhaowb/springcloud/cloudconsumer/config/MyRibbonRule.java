@@ -1,4 +1,4 @@
-package com.zhaowb.springcloud.cloudconsumer;
+package com.zhaowb.springcloud.cloudconsumer.config;
 
 import com.netflix.client.config.IClientConfig;
 import com.netflix.loadbalancer.AbstractLoadBalancerRule;
