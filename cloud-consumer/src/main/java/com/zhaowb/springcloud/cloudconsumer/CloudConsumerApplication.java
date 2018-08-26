@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableDiscoveryClient
-@RibbonClient(value = "EUREKA-CLIENT-HI",configuration = MyRibbonRule.class)
+@RibbonClient(value = "EUREKA-CLIENT-HI", configuration = MyRibbonRule.class)
 public class CloudConsumerApplication {
 
     public static void main(String[] args) {

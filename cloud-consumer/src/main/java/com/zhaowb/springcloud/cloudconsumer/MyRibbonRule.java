@@ -13,11 +13,10 @@ public class MyRibbonRule extends AbstractLoadBalancerRule {
     // index = 0 // 当前对外提供服务的服务器地址，
     // total需要重新置为零，但是已经达到过一个5次，我们的index = 1
 
-    private int total = 0; 			// 总共被调用的次数，目前要求每台被调用5次
-    private int currentIndex = 0;	// 当前提供服务的机器号
+    private int total = 0;            // 总共被调用的次数，目前要求每台被调用5次
+    private int currentIndex = 0;    // 当前提供服务的机器号
 
-    public Server choose(ILoadBalancer lb, Object key)
-    {
+    public Server choose(ILoadBalancer lb, Object key) {
         if (lb == null) {
             return null;
         }
@@ -45,15 +44,13 @@ public class MyRibbonRule extends AbstractLoadBalancerRule {
 
 //			private int total = 0; 			// 总共被调用的次数，目前要求每台被调用5次
 //			private int currentIndex = 0;	// 当前提供服务的机器号
-            if(total < 5)
-            {
+            if (total < 5) {
                 server = upList.get(currentIndex);
                 total++;
-            }else {
+            } else {
                 total = 0;
                 currentIndex++;
-                if(currentIndex >= upList.size())
-                {
+                if (currentIndex >= upList.size()) {
                     currentIndex = 0;
                 }
             }
@@ -82,14 +79,12 @@ public class MyRibbonRule extends AbstractLoadBalancerRule {
     }
 
     @Override
-    public Server choose(Object key)
-    {
+    public Server choose(Object key) {
         return choose(getLoadBalancer(), key);
     }
 
     @Override
-    public void initWithNiwsConfig(IClientConfig clientConfig)
-    {
+    public void initWithNiwsConfig(IClientConfig clientConfig) {
         // TODO Auto-generated method stub
 
     }
