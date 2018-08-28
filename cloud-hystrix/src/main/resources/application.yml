@@ -1,0 +1,41 @@
+server:
+  port: 8766
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.zhaowb.springcloud.cloudapi.entities   # 所有Entity别名类所在包
+  mapper-locations:
+  - classpath:/mybatis/mapper/**/*.xml                       # mapper映射文件
+
+spring:
+  application:
+    name: eureka-client-hi
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/cloudDB01              # 数据库名称
+    username: root
+    password: 308539393
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream # 解决找不到actuator/hystrix.stream 的问题
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: cloud-hystrix
+    prefer-ip-address: true
+info:
+  app.name: eureka-hi
+  company.name: www.zhaowb.com
+  build.artifactId: $project.artifactId$    # 这样写在idea 中运行出来不显示版本号，直接显示 $project.artifactId$ 字符串，可以自己修改
+  build.version: $project.version$
