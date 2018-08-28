@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-@FeignClient(value = "EUREKA-CLIENT-HI")
+@FeignClient(value = "eureka-client-hi",fallbackFactory = IDeptClientServiceFallbackFactory.class)
 public interface DeptClientService {
 
     @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
