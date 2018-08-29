@@ -1,6 +1,5 @@
 package com.zhaowb.springcloud.cloudapi.service;
 
-
 import com.zhaowb.springcloud.cloudapi.entities.Dept;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
