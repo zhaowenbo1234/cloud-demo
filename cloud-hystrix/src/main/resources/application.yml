@@ -1,31 +1,31 @@
 server:
   port: 8766
 mybatis:
-  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatisÅäÖÃÎÄ¼şËùÔÚÂ·¾¶
-  type-aliases-package: com.zhaowb.springcloud.cloudapi.entities   # ËùÓĞEntity±ğÃûÀàËùÔÚ°ü
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatisé…ç½®æ–‡ä»¶æ‰€åœ¨è·¯å¾„
+  type-aliases-package: com.zhaowb.springcloud.cloudapi.entities   # æ‰€æœ‰Entityåˆ«åç±»æ‰€åœ¨åŒ…
   mapper-locations:
-  - classpath:/mybatis/mapper/**/*.xml                       # mapperÓ³ÉäÎÄ¼ş
+  - classpath:/mybatis/mapper/**/*.xml                      # mapperæ˜ å°„æ–‡ä»¶
 
 spring:
   application:
     name: eureka-client-hi
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource            # µ±Ç°Êı¾İÔ´²Ù×÷ÀàĞÍ
-    driver-class-name: com.mysql.jdbc.Driver              # mysqlÇı¶¯°ü
-    url: jdbc:mysql://localhost:3306/cloudDB01              # Êı¾İ¿âÃû³Æ
+    type: com.alibaba.druid.pool.DruidDataSource           # å½“å‰æ•°æ®æºæ“ä½œç±»å‹
+    driver-class-name: com.mysql.jdbc.Driver             # mysqlé©±åŠ¨åŒ…
+    url: jdbc:mysql://localhost:3306/cloudDB01              # æ•°æ®åº“åç§°
     username: root
     password: 308539393
     dbcp2:
-      min-idle: 5                                           # Êı¾İ¿âÁ¬½Ó³ØµÄ×îĞ¡Î¬³ÖÁ¬½ÓÊı
-      initial-size: 5                                       # ³õÊ¼»¯Á¬½ÓÊı
-      max-total: 5                                          # ×î´óÁ¬½ÓÊı
-      max-wait-millis: 200                                  # µÈ´ıÁ¬½Ó»ñÈ¡µÄ×î´ó³¬Ê±Ê±¼ä
+      min-idle: 5                                           # æ•°æ®åº“è¿æ¥æ± çš„æœ€å°ç»´æŒè¿æ¥æ•°
+      initial-size: 5                                       # åˆå§‹åŒ–è¿æ¥æ•°
+      max-total: 5                                          # æœ€å¤§è¿æ¥æ•°
+      max-wait-millis: 200                                  # ç­‰å¾…è¿æ¥è·å–çš„æœ€å¤§è¶…æ—¶æ—¶é—´
 
 management:
   endpoints:
     web:
       exposure:
-        include: hystrix.stream # ½â¾öÕÒ²»µ½actuator/hystrix.stream µÄÎÊÌâ
+        include: hystrix.stream    #è§£å†³æŸ¥æ‰¾ä¸åˆ°actuator/hystrix.stream è§£å†³åŠæ³•ï¼Œå¯ä»¥é€šè¿‡é…ç½® yml è§£å†³ï¼Œ
 
 eureka:
   client:
@@ -37,5 +37,5 @@ eureka:
 info:
   app.name: eureka-hi
   company.name: www.zhaowb.com
-  build.artifactId: $project.artifactId$    # ÕâÑùĞ´ÔÚidea ÖĞÔËĞĞ³öÀ´²»ÏÔÊ¾°æ±¾ºÅ£¬Ö±½ÓÏÔÊ¾ $project.artifactId$ ×Ö·û´®£¬¿ÉÒÔ×Ô¼ºĞŞ¸Ä
+  build.artifactId: $project.artifactId$    # è¿™æ ·å†™åœ¨idea ä¸­è¿è¡Œå‡ºæ¥ä¸æ˜¾ç¤ºç‰ˆæœ¬å·ï¼Œç›´æ¥æ˜¾ç¤º $project.artifactId$ å­—ç¬¦ä¸²ï¼Œå¯ä»¥è‡ªå·±ä¿®æ”¹
   build.version: $project.version$
