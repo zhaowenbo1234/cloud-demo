@@ -1,0 +1,25 @@
+server:
+  port: 8768
+
+spring:
+  application:
+    name: cloud-zuul
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: cloud-zuul
+    prefer-ip-address: true
+
+info:
+  app.name: zhaowb-cloud-demo
+  company.name: www.zhaowb.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+zuul:
+  routes:
+    myDept:
+      serviceID: eureka-client-hi
+      path: /myDept/**
