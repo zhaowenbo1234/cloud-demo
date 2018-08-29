@@ -19,7 +19,11 @@ info:
   build.artifactId: $project.artifactId$
   build.version: $project.version$
 zuul:
+  ignored-services: "*" # \u5FFD\u7565\u6240\u6709\u5FAE\u670D\u52A1\u4E0D\u80FD\u4EE5\u539F\u6709\u5FAE\u670D\u52A1\u540D\u8BBF\u95EE
+  prefix: /zhaowb   # \u5728\u8BBF\u95EE\u524D\u52A0\u524D\u7F00
   routes:
     myDept:
       serviceID: eureka-client-hi
       path: /myDept/**
+
+
