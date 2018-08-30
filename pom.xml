@@ -19,12 +19,15 @@
     </parent>
 
     <modules>
-        <module>eureka-server</module>
-        <module>eureka-hi</module>
         <module>cloud-api</module>
         <module>cloud-consumer</module>
+        <module>cloud-hystrix</module>
+        <module>cloud-hystrix-dashboard</module>
+        <module>cloud-zuul</module>
+        <module>eureka-hi</module>
         <module>eureka-hi2</module>
         <module>eureka-hi3</module>
+        <module>eureka-server</module>
         <module>service-feign</module>
     </modules>
     <properties>
