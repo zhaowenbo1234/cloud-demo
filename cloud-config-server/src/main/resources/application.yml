@@ -1,0 +1,11 @@
+server:
+  port: 8769
+spring:
+  application:
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/JiShiMoWang_admin/cloud-demo-config.git
+          default-label: master
