@@ -1,0 +1,6 @@
+spring:
+  cloud:
+    config:
+      name: cloud-config-eureka-server
+      uri: http://localhost:8769/
+      label: master

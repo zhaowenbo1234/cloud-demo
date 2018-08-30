@@ -20,6 +20,9 @@
 
     <modules>
         <module>cloud-api</module>
+        <module>cloud-config-dept-client</module>
+        <module>cloud-config-eureka-server</module>
+        <module>cloud-config-server</module>
         <module>cloud-consumer</module>
         <module>cloud-hystrix</module>
         <module>cloud-hystrix-dashboard</module>
