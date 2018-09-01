@@ -23,13 +23,13 @@ public class DeptController {
     @HystrixCommand(fallbackMethod = "getDeptError")
     public Dept get(@PathVariable("id") Long id) {
         Dept dept = service.get(id);
-        if (dept == null){
+        if (dept == null) {
             throw new RuntimeException("dept is null id =" + id);
         }
         return service.get(id);
     }
 
-    public Dept getDeptError(@PathVariable("id") Long id){
+    public Dept getDeptError(@PathVariable("id") Long id) {
         Dept dept = new Dept();
         dept.setDeptno(id);
         dept.setDname("该ID：" + id + "没有没有对应的信息,null--@HystrixCommand");
